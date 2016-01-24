@@ -1,6 +1,7 @@
 #Openodulos
 import os
 import socket
+import subprocess
 #CloseModulos
 
 print('''##########################################################
@@ -14,8 +15,9 @@ print('''##########################################################
 print("1 : Add repositorios do backbox")
 print("2 : Instalar ferramentas de pentest")
 print("3 : PortScan")
-print("4 : Instalar o tor-browser")
-print("5 : Quit")
+print("4 : Nmap Scan")
+print("5 : Instalar o tor-browser")
+print("6 : Quit")
 operacao = int(input("Digite operacao? "))
 
 #RepositoriosBackbox
@@ -35,7 +37,7 @@ elif operacao == 2:
 
 #PortScan
 elif operacao == 3:
-	host = input("Digite IP: ")
+	host = raw_input("Digite o IP: ")
 	def site_porta(host, port):
 
 		try:
@@ -50,15 +52,18 @@ elif operacao == 3:
 	for port in range(21, 3306):
 		if site_porta(host, port):
 			print("{}  <<Porta aberta".format(port))
-
+## NMAP ##
 elif operacao == 4:
+	ip = raw_input("IP Alvo: ")
+	os.system("sudo nmap -sC -sV " + ip)
+
+elif operacao == 5:
 	os.system('sudo add-apt-repository -y ppa:webupd8team/tor-browser')
 	os.system('sudo apt-get update')
 	os.system('sudo apt-get install tor-browser')
 
 #Close
-elif operacao == 5:
+elif operacao == 6:
 	print("BYE!!!!!!")
 	os.system('clear')
 	os.system('exit')
-
