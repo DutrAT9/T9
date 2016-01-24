@@ -5,10 +5,12 @@ import subprocess
 #CloseModulos
 
 print('''##########################################################
+# [+] AUTOR:        Igor Oliveira                        #
 # [+] AUTOR:        Gabriel de Moura Dutra               #
 # [+] EMAIL:        gabrieldutra-08outlook.com           #
 # [+] GITHUB:       https://github.com/gabrielD9         #
 # [+] FACEBOOK:     https://fb.com/gabriel.dutra.47884754#
+# [+] FACEBOOK:     https://fb.com/igor2014.assumcao     #
 ##########################################################''')
 
 #Define a operacao
